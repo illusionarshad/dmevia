@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DMEvia | CMS Supplier Search</title>
+<style>
+:root{--green:#123c35;--gold:#c5a66a;--cream:#f7f4ec;--ink:#1f2d29;--muted:#66736e;--line:#e4e8e3;--pale:#edf3ef}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.5;background:#fff}
+.wrap{max-width:1120px;margin:auto;padding:0 22px}.top{background:var(--green);color:#fff;padding:18px 0}.brand{font-size:25px;font-weight:800}.brand span{color:var(--gold)}
+.hero{background:var(--cream);padding:42px 0 34px}.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.1;max-width:780px;color:var(--green);margin:0 0 14px}.hero p{max-width:760px;color:#53625c;font-size:16px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;margin-top:22px;box-shadow:0 8px 24px #123c350b}
+.loadrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.loadrow input{max-width:100%;padding:10px;border:1px solid #cfd8d2;border-radius:8px}.status{padding:13px 15px;border-radius:9px;background:#f1f5f2;color:#40524a;margin:14px 0}.warn{background:#fff7e8;color:#77561d}.search{display:grid;grid-template-columns:1fr 1.35fr auto auto;gap:12px;margin-top:18px;align-items:end}
+.field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}.field input,.field select{width:100%;height:48px;border:1px solid #cfd8d2;border-radius:9px;padding:0 12px;font-size:16px;background:white}
+.btn{border:0;border-radius:9px;background:var(--green);color:white;font-weight:700;font-size:15px;padding:0 22px;cursor:pointer;min-height:48px}.btn.secondary{background:#eaf0ec;color:var(--green)}.btn:disabled{opacity:.5}
+.hint,.meta{font-size:13px;color:var(--muted)}.results{padding:28px 0 50px}.result{border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0;background:#fff}.result h3{margin:0 0 5px;color:var(--green);font-size:19px}
+.pill{display:inline-block;background:var(--pale);color:#315b4d;padding:4px 8px;border-radius:18px;font-size:12px;margin:7px 5px 0 0}.result-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.result-label{font-size:12px;font-weight:700;color:#315b4d;background:var(--pale);padding:4px 9px;border-radius:20px;height:max-content}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0}.toolbar select{padding:9px;border:1px solid #cfd8d2;border-radius:8px;background:white}
+.footer{background:#102f2a;color:#dce7e1;padding:25px 0;font-size:13px}.footer a{color:#e8d6ad}a{color:var(--green)}
+@media(max-width:760px){.search{grid-template-columns:1fr}.btn{width:100%}.hero{padding-top:32px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">DME<span>via</span></div></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<h1>Find medical equipment suppliers near your ZIP code.</h1>
+<p>Search the official CMS Medical Equipment Suppliers file by ZIP code and the equipment categories listed for each supplier.</p>
+<div class="panel">
+<h2 style="margin:0 0 6px;color:var(--green);font-size:21px">Search the supplier directory</h2>
+<p class="hint" style="margin-top:0">DMEvia loads the relevant section of its CMS supplier data automatically when you search. No file upload is required.</p>
+<div class="status" id="status" role="status">Ready. Supplier data will load when you search by ZIP code.</div>
+<form class="search" id="searchForm">
+<div class="field"><label for="zip">US ZIP code</label><input id="zip" inputmode="numeric" maxlength="5" pattern="[0-9]{5}" placeholder="e.g. 10001" required></div>
+<div class="field"><label for="category">Equipment category</label><select id="category">
+<option value="">All equipment categories</option><option value="cpap">CPAP devices</option><option value="oxygen">Oxygen equipment and supplies</option><option value="wheelchair">Wheelchairs</option><option value="hospitalbed">Hospital beds</option><option value="walker">Walkers</option><option value="lift">Patient lifts</option><option value="nebulizer">Nebulizers</option><option value="glucose">Blood glucose monitors and supplies</option><option value="diabetic">Diabetic shoes and inserts</option><option value="enteral">Enteral equipment and supplies</option>
+</select></div>
+<button class="btn" id="searchBtn" type="submit">Find suppliers</button><button class="btn secondary" id="clearBtn" type="button">Clear</button>
+</form>
+<p class="hint">Search matches supplier locations in the ZIP code. A listing does not confirm current stock, delivery coverage, or acceptance of a particular insurance plan.</p>
+</div></div></section>
+<section class="results wrap" id="resultsSection" hidden>
+<h2 style="color:var(--green);margin-bottom:4px">Supplier results</h2><div id="resultStatus" class="status"></div>
+<div class="toolbar"><span class="hint" id="resultSummary"></span><label class="hint">Sort by: <select id="sortBy"><option value="name">Supplier name (A–Z)</option><option value="zip">ZIP code</option></select></label></div>
+<div id="results"></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><b>DMEvia</b><p>Independent directory using publicly available CMS data. DMEvia is not affiliated with or endorsed by CMS or Medicare.</p><p>Data source: <a href="https://data.cms.gov/provider-data/dataset/ct36-nrcq" target="_blank" rel="noopener">CMS Medical Equipment Suppliers</a>. Verify details directly with each supplier.</p></div></footer>
+<script>
+const fields=['provider_id','acceptsassignement','businessname','practicename','practiceaddress1','practiceaddress2','practicecity','practicestate','practicezip9code','telephonenumber','supplieslist','latitude','longitude','participationbegindate','specialitieslist','providertypelist','is_contracted_for_cba'];
+let currentMatches=[];
+const statusBox=document.getElementById('status'),form=document.getElementById('searchForm'),section=document.getElementById('resultsSection'),resultStatus=document.getElementById('resultStatus'),out=document.getElementById('results'),summary=document.getElementById('resultSummary');
+const cache=new Map();
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function unpack(a){const o={};fields.forEach((k,i)=>o[k]=a[i]||'');return o;}
+function categoryTokens(value){return String(value||'').split('|').map(x=>x.trim().toLowerCase()).filter(Boolean);}
+const terms={
+ cpap:['continuous positive airway pressure (cpap) devices','continuous positive airway pressure','cpap'],
+ oxygen:['oxygen equipment and/or supplies','oxygen equipment','oxygen'],wheelchair:['wheelchairs'],hospitalbed:['hospital beds'],walker:['walkers'],lift:['patient lifts','lifts'],
+ nebulizer:['nebulizer equipment and/or supplies','nebulizer'],glucose:['blood glucose monitors and supplies','blood glucose','glucose monitors','diabetic testing'],
+ diabetic:['diabetic shoes and inserts','diabetic shoes','therapeutic shoes'],enteral:['enteral equipment and supplies','enteral']
+};
+async function loadPrefix(prefix){
+ if(cache.has(prefix))return cache.get(prefix);
+ const promise=fetch('data/'+prefix+'.json').then(r=>{if(!r.ok)throw new Error('Supplier data file '+prefix+'.json could not be loaded (HTTP '+r.status+').');return r.json();}).then(a=>a.map(unpack));
+ cache.set(prefix,promise);
+ try{return await promise;}catch(e){cache.delete(prefix);throw e;}
+}
+function renderResults(){
+ const sort=document.getElementById('sortBy').value;
+ const list=[...currentMatches].sort((a,b)=>sort==='zip'?String(a.practicezip9code||'').localeCompare(String(b.practicezip9code||''))||String(a.practicename||'').localeCompare(String(b.practicename||'')):String(a.practicename||a.businessname||'').localeCompare(String(b.practicename||b.businessname||'')));
+ summary.textContent='Showing '+list.length.toLocaleString()+' matching supplier location(s).';
+ out.innerHTML=list.slice(0,200).map(r=>{
+  const name=r.practicename||r.businessname||'Supplier name unavailable',zip=String(r.practicezip9code||'');
+  const addr=[r.practiceaddress1,r.practiceaddress2,r.practicecity,r.practicestate,zip].filter(Boolean).join(', '),phone=String(r.telephonenumber||'').replace(/\D/g,'');
+  const supplies=String(r.supplieslist||'').split('|').map(x=>x.trim()).filter(Boolean);
+  const assignment=String(r.acceptsassignement||'').toLowerCase()==='true'?'Yes':String(r.acceptsassignement||'').toLowerCase()==='false'?'No':'Not stated';
+  return `<article class="result"><div class="result-top"><div><h3>${esc(name)}</h3><div class="meta">${esc(addr)}</div></div><span class="result-label">CMS-listed supplier</span></div>${phone?`<div style="margin-top:7px"><a href="tel:${esc(phone)}">${esc(phone)}</a></div>`:''}<div>${supplies.map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div><div class="meta" style="margin-top:10px">CMS supplier ID: ${esc(r.provider_id||'—')} · Medicare assignment accepted: ${assignment}</div></article>`;
+ }).join('')+(list.length>200?'<p class="hint">Showing the first 200 results. Narrow your search by ZIP code or category.</p>':'');
+}
+form.addEventListener('submit',async e=>{
+ e.preventDefault();section.hidden=false;out.innerHTML='';summary.textContent='';
+ const zip=document.getElementById('zip').value.trim(),cat=document.getElementById('category').value;
+ if(!/^\d{5}$/.test(zip)){resultStatus.className='status warn';resultStatus.textContent='Enter a valid five-digit US ZIP code.';return;}
+ resultStatus.className='status';resultStatus.textContent='Loading supplier data for ZIP '+zip+'…';statusBox.textContent='Loading the relevant CMS data section…';
+ try{
+  const records=await loadPrefix(zip.slice(0,2));
+  let matches=records.filter(r=>String(r.practicezip9code||'').replace(/\D/g,'').startsWith(zip));
+  if(cat){const keys=terms[cat]||[];matches=matches.filter(r=>categoryTokens(r.supplieslist).some(token=>keys.some(k=>token.includes(k))));}
+  currentMatches=matches;const categoryLabel=document.getElementById('category').selectedOptions[0].text;
+  resultStatus.textContent='Found '+matches.length.toLocaleString()+' matching CMS supplier location(s) for ZIP '+zip+(cat?' in '+categoryLabel+'.':'.');
+  statusBox.textContent='Supplier data loaded successfully. Search another ZIP code whenever you like.';
+  if(!matches.length){summary.textContent='';out.innerHTML='<p>No matching CMS supplier records found. Try another ZIP code or equipment category.</p>';return;}
+  renderResults();
+ }catch(err){resultStatus.className='status warn';resultStatus.textContent='Could not load supplier data: '+err.message;statusBox.className='status warn';statusBox.textContent='Data loading failed. Please refresh the page and try again.';}
+});
+document.getElementById('sortBy').addEventListener('change',()=>{if(currentMatches.length)renderResults();});
+document.getElementById('clearBtn').addEventListener('click',()=>{document.getElementById('zip').value='';document.getElementById('category').value='';section.hidden=true;out.innerHTML='';summary.textContent='';currentMatches=[];});
+</script>
+</body></html>
