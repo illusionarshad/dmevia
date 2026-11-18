@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>How DMEvia Works | Find DME Suppliers</title>
+
+<meta name="description" content="Learn how to use DMEvia to find Durable Medical Equipment suppliers by US ZIP code and equipment category.">
+
+<link rel="canonical" href="https://dmevia.com/how-it-works.html">
+
+<style>
+:root {
+    --navy: #102b46;
+    --teal: #087e83;
+    --light: #f3f8fa;
+    --text: #344454;
+    --muted: #687989;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: white;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    border-bottom: 1px solid #e5edf0;
+    padding: 17px 6%;
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--navy);
+    font-size: 27px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--teal);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--teal);
+}
+
+.hero {
+    background: linear-gradient(120deg, #102b46, #087e83);
+    color: white;
+    padding: 85px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 43px;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+    font-size: 18px;
+    color: #e8f5f5;
+}
+
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 55px 22px;
+}
+
+h2 {
+    color: var(--navy);
+    font-size: 27px;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 45px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.step {
+    background: var(--light);
+    border: 1px solid #e1ecef;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.number {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--teal);
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    color: var(--navy);
+    margin: 0 0 10px;
+}
+
+.section {
+    margin-bottom: 55px;
+}
+
+.highlight {
+    background: #edf7f7;
+    border-left: 4px solid var(--teal);
+    padding: 22px 25px;
+    border-radius: 5px;
+    margin-top: 22px;
+}
+
+.equipment {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.equipment div {
+    background: var(--light);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.button {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.button:hover {
+    background: var(--navy);
+}
+
+footer {
+    background: var(--navy);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+footer p {
+    color: #d5e1e9;
+    font-size: 13px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 9px;
+    font-size: 13px;
+}
+
+.footer-links {
+    margin-bottom: 18px;
+}
+
+@media(max-width:700px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .container {
+        padding: 40px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <a class="logo" href="index.html">DME<span>via</span></a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#search">Find Suppliers</a>
+            <a href="about.html">About Us</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>How DMEvia Works</h1>
+    <p>
+        Finding Durable Medical Equipment suppliers can be easier.
+        Follow a few simple steps to explore supplier locations
+        in your area.
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Find Suppliers in Four Simple Steps</h2>
+
+        <p>
+            DMEvia helps you explore supplier locations using
+            publicly available information. You can search by
+            ZIP code and equipment category without navigating
+            multiple directories.
+        </p>
+    </section>
+
+    <section class="section">
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="number">1</div>
+                <h3>Enter Your ZIP Code</h3>
+                <p>
+                    Start by entering the five-digit ZIP code
+                    of the area where you want to find a
+                    medical equipment supplier.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <h3>Select Equipment</h3>
+                <p>
+                    Choose the equipment category you are
+                    looking for, such as wheelchairs, walkers,
+                    oxygen equipment or CPAP.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <h3>Explore Supplier Results</h3>
+                <p>
+                    Review matching supplier locations,
+                    business names, addresses and available
+                    contact information displayed in the results.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="number">4</div>
+                <h3>Contact the Supplier</h3>
+                <p>
+                    Contact the supplier directly to confirm
+                    equipment availability, pricing, insurance
+                    acceptance and delivery arrangements.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>What Equipment Can You Search For?</h2>
+
+        <p>
+            DMEvia currently supports searches across several
+            Durable Medical Equipment categories, including:
+        </p>
+
+        <div class="equipment">
+            <div>CPAP Equipment</div>
+            <div>Oxygen Equipment</div>
+            <div>Wheelchairs</div>
+            <div>Hospital Beds</div>
+            <div>Walkers</div>
+            <div>Patient Lifts</div>
+            <div>Nebulizers</div>
+            <div>Blood Glucose Monitors</div>
+            <div>Diabetic Shoes and Inserts</div>
+            <div>Enteral Equipment and Supplies</div>
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Understanding Your Search Results</h2>
+
+        <p>
+            Search results are generated from publicly available
+            supplier information published by the Centers for
+            Medicare &amp; Medicaid Services (CMS).
+        </p>
+
+        <p>
+            The results help identify supplier locations
+            associated with the ZIP code and equipment category
+            selected in your search.
+        </p>
+
+        <div class="highlight">
+            <strong>Please remember:</strong>
+            A supplier appearing in your search results does
+            not guarantee that the supplier currently stocks
+            the equipment, serves your particular address,
+            accepts your insurance or has immediate availability.
+            Always contact the supplier directly before making
+            arrangements.
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Important Things to Confirm with Suppliers</h2>
+
+        <p>
+            Before choosing a supplier, we recommend confirming:
+        </p>
+
+        <ul>
+            <li>Whether the required equipment is currently available.</li>
+            <li>Whether the supplier serves your location.</li>
+            <li>Whether delivery or installation is offered.</li>
+            <li>Whether your insurance plan is accepted.</li>
+            <li>Whether a prescription or prior authorization is required.</li>
+            <li>What costs, copayments or other charges may apply.</li>
+        </ul>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Is DMEvia Affiliated with Medicare or CMS?</h2>
+
+        <p>
+            No. DMEvia is an independent supplier directory.
+            It is not affiliated with, endorsed by or operated
+            by CMS, Medicare or any government agency.
+        </p>
+
+        <p>
+            We organize publicly available information to make
+            supplier discovery easier. We do not determine
+            Medicare coverage, insurance eligibility or medical
+            necessity.
+        </p>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Ready to Find a Supplier?</h2>
+
+        <p>
+            Start exploring DME supplier locations by entering
+            your ZIP code and selecting an equipment category.
+        </p>
+
+        <a class="button" href="index.html#search">
+            Search DME Suppliers
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+
+    <p>© 2026 DMEvia. All rights reserved.</p>
+
+    <p>
+        DMEvia is an independent directory and is not affiliated
+        with or endorsed by CMS or Medicare.
+    </p>
+
+</footer>
+
+</body>
+</html>
