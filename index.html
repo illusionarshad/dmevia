@@ -10,6 +10,8 @@
 
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://dmevia.com/">
+<link rel="icon" type="image/png" href="assets/dmevia-icon.png">
+<link rel="apple-touch-icon" href="assets/dmevia-icon.png">
 
 <meta name="google-site-verification" content="oNrN6UhCENdYmzfl_J0e6WkcYZ_KPbe-ozMkApFp3Yk" />
 
@@ -93,23 +95,23 @@ header {
 }
 
 .logo {
-  font-size: 29px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  color: var(--navy);
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 0;
 }
 
-.logo span {
-  color: var(--teal);
-}
-
-.logo small {
+.logo img {
   display: block;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: var(--muted);
-  margin-top: -7px;
+  width: 285px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media(max-width:600px) {
+  .logo img {
+    width: 245px;
+  }
 }
 
 .navlinks {
@@ -676,9 +678,8 @@ footer a {
 <header>
 <div class="wrap nav">
 
-<a href="#" class="logo">
-DME<span>via</span>
-<small>FIND DME SUPPLIERS</small>
+<a href="/" class="logo" aria-label="DMEvia home">
+<img src="assets/dmevia-logo.png" alt="DMEvia — Find the Right DME Supplier Near You">
 </a>
 
 <nav class="navlinks" aria-label="Main navigation">
