@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your DME supplier business information for review by DMEvia, an independent DME supplier directory.">
+  <meta name="theme-color" content="#123b50">
+  <title>Supplier Onboarding | DMEvia</title>
+  <link rel="icon" type="image/png" href="assets/dmevia-icon.png">
+  <style>
+    :root {
+      --navy: #123b50;
+      --navy-dark: #0c2d3e;
+      --teal: #159b91;
+      --teal-dark: #107c75;
+      --ink: #263943;
+      --muted: #62747d;
+      --line: #dce6e9;
+      --soft: #f3f8f8;
+      --white: #ffffff;
+      --danger: #a33b36;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f5f8f9;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--teal-dark); }
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      min-height: 82px;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand img { display: block; width: 245px; max-width: 54vw; height: auto; }
+    .nav { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+    .nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav a:hover { color: var(--teal-dark); }
+    .hero {
+      background: linear-gradient(120deg, var(--navy-dark), var(--navy));
+      color: white;
+      padding: 48px 22px 44px;
+    }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .eyebrow {
+      color: #8ee0d7;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+    h1 { margin: 8px 0 12px; font-size: clamp(30px, 5vw, 42px); line-height: 1.15; }
+    .hero p { max-width: 730px; margin: 0; color: #e2eef1; font-size: 17px; }
+    .page-wrap { max-width: 900px; margin: 32px auto 64px; padding: 0 18px; }
+    .notice {
+      background: #eaf7f5;
+      border: 1px solid #c6e9e4;
+      border-left: 4px solid var(--teal);
+      border-radius: 9px;
+      padding: 15px 18px;
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+    form {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(18, 59, 80, .06);
+      padding: 28px;
+    }
+    fieldset { border: 0; padding: 0; margin: 0 0 30px; }
+    fieldset:last-of-type { margin-bottom: 18px; }
+    legend {
+      display: block;
+      width: 100%;
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 700;
+      padding: 0 0 12px;
+      margin-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-help { color: var(--muted); font-size: 13px; margin: -8px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 18px; }
+    .field { min-width: 0; }
+    .full { grid-column: 1 / -1; }
+    label, .group-label {
+      display: block;
+      color: #304852;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .required { color: var(--danger); }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #cbd9de;
+      border-radius: 7px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
+      font-size: 14px;
+      padding: 11px 12px;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(21, 155, 145, .13);
+    }
+    textarea { min-height: 100px; resize: vertical; }
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      margin-top: 8px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0;
+      color: var(--ink);
+    }
+    .check-item input {
+      width: 16px;
+      height: 16px;
+      margin: 3px 0 0;
+      flex: 0 0 auto;
+      accent-color: var(--teal);
+    }
+    .consent-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 15px;
+      margin: 14px 0;
+    }
+    .consent-box .check-item { font-size: 13px; margin: 0 0 12px; }
+    .consent-box .check-item:last-child { margin-bottom: 0; }
+    .privacy-note { color: var(--muted); font-size: 12px; margin: 14px 0 0; }
+    .submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 22px; }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--teal);
+      color: white;
+      padding: 13px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--teal-dark); }
+    .submit-note { color: var(--muted); font-size: 12px; }
+    .footer {
+      background: var(--navy-dark);
+      color: #d7e4e8;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    .footer a { color: #8ee0d7; text-decoration: none; }
+    .honeypot { position: absolute; left: -5000px; width: 1px; height: 1px; overflow: hidden; }
+    @media (max-width: 650px) {
+      .header-inner { align-items: flex-start; flex-direction: column; gap: 10px; }
+      .nav { gap: 14px; }
+      .hero { padding: 36px 20px; }
+      form { padding: 21px 17px; }
+      .grid, .check-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="DMEvia home">
+        <img src="assets/dmevia-logo.png" alt="DMEvia — Find the Right DME Supplier Near You">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">For DME suppliers</div>
+      <h1>Join the DMEvia Supplier Directory</h1>
+      <p>Share your business information so our team can review it for a complimentary basic listing during the DMEvia launch. Submitting this form does not automatically publish a listing.</p>
+    </div>
+  </section>
+
+  <main class="page-wrap">
+    <div class="notice">
+      <strong>How it works:</strong> Submit your business details and equipment categories. DMEvia will review the information and may contact you to confirm details before any listing is published. Participation is optional and there is no obligation.
+    </div>
+
+    <form action="https://formsubmit.co/info@dmevia.com" method="POST">
+      <input type="hidden" name="_subject" value="New DMEvia Supplier Onboarding Submission">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+      <fieldset>
+        <legend>1. Business information</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="business_name">Business name <span class="required">*</span></label>
+            <input id="business_name" name="Business name" required maxlength="150">
+          </div>
+          <div class="field">
+            <label for="legal_name">Legal business name (if different)</label>
+            <input id="legal_name" name="Legal business name" maxlength="150">
+          </div>
+          <div class="field">
+            <label for="website">Business website</label>
+            <input id="website" name="Business website" type="url" placeholder="https://">
+          </div>
+          <div class="field">
+            <label for="year">Year established (optional)</label>
+            <input id="year" name="Year established" inputmode="numeric" pattern="[0-9]{4}" placeholder="e.g. 2015">
+          </div>
+          <div class="field full">
+            <label for="description">Brief business description</label>
+            <textarea id="description" name="Business description" maxlength="1200" placeholder="Tell us briefly about your business and the communities you serve."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Business contact and location</legend>
+        <div class="grid">
+          <div class="field">
+            <label for="contact_name">Contact person's name <span class="required">*</span></label>
+            <input id="contact_name" name="Contact person" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="designation">Job title / designation</label>
+            <input id="designation" name="Designation">
+          </div>
+          <div class="field">
+            <label for="email">Business email <span class="required">*</span></label>
+            <input id="email" name="Business email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Business phone <span class="required">*</span></label>
+            <input id="phone" name="Business phone" type="tel" required autocomplete="tel">
+          </div>
+          <div class="field full">
+            <label for="address">Street address <span class="required">*</span></label>
+            <input id="address" name="Street address" required autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label for="city">City <span class="required">*</span></label>
+            <input id="city" name="City" required autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="state">State <span class="required">*</span></label>
+            <input id="state" name="State" required maxlength="60" autocomplete="address-level1">
+          </div>
+          <div class="field">
+            <label for="zip">ZIP code <span class="required">*</span></label>
+            <input id="zip" name="ZIP code" required inputmode="numeric" maxlength="10" autocomplete="postal-code">
+          </div>
+          <div class="field">
+            <label for="country">Country</label>
+            <input id="country" name="Country" value="United States">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Equipment categories</legend>
+        <p class="section-help">Select all categories your business offers. These selections are supplier-provided information and may be confirmed during review.</p>
+        <div class="check-grid">
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Wheelchairs"> Wheelchairs</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Walkers and mobility aids"> Walkers and mobility aids</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Hospital beds"> Hospital beds</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Patient lifts"> Patient lifts</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="CPAP and respiratory equipment"> CPAP and respiratory equipment</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Oxygen equipment"> Oxygen equipment</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Power mobility scooters"> Power mobility scooters</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Diabetic supplies"> Diabetic supplies</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Orthopedic supplies and braces"> Orthopedic supplies and braces</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Bathroom safety equipment"> Bathroom safety equipment</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Nebulizers"> Nebulizers</label>
+          <label class="check-item"><input type="checkbox" name="Equipment categories[]" value="Other medical equipment"> Other medical equipment</label>
+        </div>
+        <div class="field" style="margin-top:16px">
+          <label for="other_equipment">Other equipment details (optional)</label>
+          <input id="other_equipment" name="Other equipment details">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Service information</legend>
+        <div class="grid">
+          <div class="field full">
+            <label for="service_area">Cities, counties, ZIP codes or states served</label>
+            <textarea id="service_area" name="Service areas" placeholder="List the areas your business currently serves."></textarea>
+          </div>
+          <div class="field">
+            <label for="delivery">Delivery service</label>
+            <select id="delivery" name="Delivery service">
+              <option value="">Please select</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Varies by equipment or location</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="business_type">Business model</label>
+            <select id="business_type" name="Business model">
+              <option value="">Please select</option>
+              <option>Physical store / showroom</option>
+              <option>Online / phone orders</option>
+              <option>Both physical and online</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="insurance">Insurance plans accepted (optional)</label>
+            <textarea id="insurance" name="Insurance plans accepted" placeholder="List plans you accept, if you wish. This information will be reviewed before display."></textarea>
+          </div>
+          <div class="field">
+            <label for="medicare">Medicare supplier participation (optional)</label>
+            <select id="medicare" name="Medicare supplier participation">
+              <option value="">Please select</option>
+              <option>Currently enrolled</option>
+              <option>Not currently enrolled</option>
+              <option>Unsure</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Confirmation and permission</legend>
+        <div class="consent-box">
+          <label class="check-item">
+            <input type="checkbox" name="Authorised representative confirmation" value="Confirmed" required>
+            I confirm that I am authorised to submit this information on behalf of the business. <span class="required">*</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="Information accuracy confirmation" value="Confirmed" required>
+            I confirm that the information provided is accurate to the best of my knowledge. <span class="required">*</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="Publication permission" value="Permission granted" required>
+            I authorise DMEvia to review this information, contact me about verification, and display the approved business information in its directory. I understand that submission does not guarantee publication. <span class="required">*</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="Complimentary listing acknowledgement" value="Acknowledged" required>
+            I understand that the basic listing is complimentary during the launch phase and that there is no obligation to participate. <span class="required">*</span>
+          </label>
+        </div>
+        <p class="privacy-note">Please do not submit patient names, medical records, Medicare numbers, insurance member IDs, or other patient-sensitive information. DMEvia is an independent directory and is not affiliated with or endorsed by CMS or Medicare. Supplier-submitted details are subject to review; listed categories do not guarantee current inventory, insurance acceptance, eligibility, delivery or service availability.</p>
+        <div class="submit-row">
+          <button type="submit">Submit Supplier Information</button>
+          <span class="submit-note">Required fields are marked with an asterisk (*).</span>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div><strong>DMEvia</strong> — Find the Right DME Supplier Near You.</div>
+    <div style="margin-top:6px"><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="disclaimer.html">Disclaimer</a> &nbsp;|&nbsp; <a href="contact.html">Contact</a></div>
+    <div style="margin-top:8px">&copy; <span id="year-now"></span> DMEvia. Independent supplier directory.</div>
+  </footer>
+  <script>document.getElementById("year-now").textContent = new Date().getFullYear();</script>
+</body>
+</html>
