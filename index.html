@@ -1,447 +1,1511 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-\<html lang="en">
-\<head>
-\<meta charset="UTF-8">
-\<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMEvia | Find Medical Equipment Suppliers Near You</title>
 
-\<title>DMEvia | Find Medical Equipment Suppliers Near You\</title>
+<meta name="description" content="Find Durable Medical Equipment (DME) suppliers near you. Search CMS-listed medical equipment suppliers by US ZIP code and equipment category with DMEvia.">
 
-\<meta name="description" content="Find Durable Medical Equipment (DME) suppliers near you. Search CMS-listed medical equipment suppliers by US ZIP code and equipment category with DMEvia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dmevia.com/">
 
-\<meta name="robots" content="index, follow"> \<link rel="canonical" href="[https://dmevia.com/](https://dmevia.com/)"> \<link rel="icon" type="image/png" href="assets/dmevia-icon.png"> \<link rel="apple-touch-icon" href="assets/dmevia-icon.png">
+<meta name="google-site-verification" content="oNrN6UhCENdYmzfl_J0e6WkcYZ_KPbe-ozMkApFp3Yk" />
 
-\<meta name="google-site-verification" content="oNrN6UhCENdYmzfl_J0e6WkcYZ_KPbe-ozMkApFp3Yk" />
+<meta property="og:title" content="DMEvia | Find the Right DME Supplier Near You">
+<meta property="og:description" content="Search medical equipment supplier locations across the United States by ZIP code and equipment category.">
+<meta property="og:url" content="https://dmevia.com/">
+<meta property="og:type" content="website">
 
-\<meta property="og\:title" content="DMEvia | Find the Right DME Supplier Near You"> \<meta property="og\:description" content="Search medical equipment supplier locations across the United States by ZIP code and equipment category."> \<meta property="og\:url" content="[https://dmevia.com/](https://dmevia.com/)"> \<meta property="og\:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DMEvia",
+  "url": "https://dmevia.com/",
+  "email": "info@dmevia.com",
+  "description": "An independent online directory helping people find Durable Medical Equipment supplier locations across the United States."
+}
+</script>
 
-\<script type="application/ld+json"> {   "@context": "[https://schema.org](https://schema.org)",   "@type": "Organization",   "name": "DMEvia",   "url": "[https://dmevia.com/](https://dmevia.com/)",   "email": "info\@dmevia.com",   "description": "An independent online directory helping people find Durable Medical Equipment supplier locations across the United States." } \</script>
+<style>
+:root {
+  --navy: #102b46;
+  --navy-light: #193e5e;
+  --teal: #087f80;
+  --teal-dark: #066767;
+  --mint: #eaf5f3;
+  --background: #f5f8fa;
+  --white: #ffffff;
+  --text: #263746;
+  --muted: #687987;
+  --border: #e2e9ee;
+  --gold: #d5b66d;
+}
 
-\<style> \:root {   --navy: #102b46;   --navy-light: #193e5e;   --teal: #087f80;   --teal-dark: #066767;   --mint: #eaf5f3;   --background: #f5f8fa;   --white: #ffffff;   --text: #263746;   --muted: #687987;   --border: #e2e9ee;   --gold: #d5b66d; }  \* {   box-sizing: border-box; }  html {   scroll-behavior: smooth; }  body {   margin: 0;   font-family: Arial, Helvetica, sans-serif;   color: var(--text);   line-height: 1.6;   background: var(--white); }  a {   color: var(--teal);   text-decoration: none; }  a\:hover {   text-decoration: underline; }  .wrap {   width: min(1160px, calc(100% - 40px));   margin: auto; }  /\* HEADER \*/  header {   background: var(--white);   border-bottom: 1px solid var(--border);   position: sticky;   top: 0;   z-index: 100; }  .nav {   min-height: 76px;   display: flex;   align-items: center;   justify-content: space-between;   gap: 20px; }  .logo {   display: flex;   align-items: center;   flex: 0 0 auto;   line-height: 0; }  .logo img {   display: block;   width: 285px;   max-width: 100%;   height: auto; }  @media(max-width:600px) {   .logo img {     width: 245px;   } }  .navlinks {   display: flex;   align-items: center;   gap: 27px; }  .navlinks a {   color: var(--navy);   font-size: 14px;   font-weight: 600; }  .navlinks .nav-button {   background: var(--teal);   color: white;   padding: 11px 18px;   border-radius: 8px; }  /\* HERO \*/  .hero {   background: linear-gradient(120deg, #102b46, #17616b);   color: white;   padding: 85px 0 75px; }  .hero-content {   max-width: 850px; }  .eyebrow {   display: inline-block;   background: #ffffff1a;   color: #c8eeee;   padding: 7px 13px;   border-radius: 30px;   font-size: 12px;   font-weight: 700;   letter-spacing: 1px;   text-transform: uppercase; }  .hero h1 {   font-size: clamp(36px, 5vw, 57px);   line-height: 1.12;   letter-spacing: -1.5px;   margin: 23px 0 18px;   max-width: 800px; }  .hero p {   font-size: 18px;   color: #e1eeee;   max-width: 690px;   margin-bottom: 28px; }  .hero-button {   display: inline-block;   background: white;   color: var(--navy);   padding: 14px 23px;   border-radius: 8px;   font-weight: 700; }  .hero-button\:hover {   background: #eaf5f3;   text-decoration: none; }  /\* SEARCH \*/  .search-area {   background: var(--background);   padding: 65px 0;   scroll-margin-top: 90px; }  .search-card {   background: white;   padding: 30px;   border-radius: 15px;   border: 1px solid var(--border);   box-shadow: 0 12px 35px #102b460c; }  .section-heading {   text-align: center;   margin-bottom: 30px; }  .section-heading h2 {   color: var(--navy);   font-size: 30px;   margin: 0 0 8px; }  .section-heading p {   color: var(--muted);   margin: 0; }  .search-grid {   display: grid;   grid-template-columns: 1fr 1.35fr auto auto;   gap: 12px;   align-items: end; }  .field label {   display: block;   font-size: 13px;   font-weight: 700;   margin-bottom: 7px;   color: var(--navy); }  .field input, .field select {   width: 100%;   height: 49px;   border: 1px solid #cbd7df;   border-radius: 8px;   padding: 0 12px;   font-size: 15px;   background: white;   color: var(--text); }  .btn {   min-height: 49px;   border: 0;   border-radius: 8px;   background: var(--teal);   color: white;   padding: 0 21px;   font-weight: 700;   font-size: 14px;   cursor: pointer; }  .btn\:hover {   background: var(--teal-dark); }  .btn.secondary {   background: #e9f0f3;   color: var(--navy); }  .btn\:disabled {   opacity: .5; }  .status {   padding: 13px 15px;   border-radius: 8px;   background: var(--mint);   color: var(--navy);   margin: 16px 0;   font-size: 14px; }  .status.warn {   background: #fff3e5;   color: #80541a; }  .hint {   font-size: 12px;   color: var(--muted);   margin-top: 17px; }  /\* RESULTS \*/  .results {   padding-top: 40px;   padding-bottom: 45px; }  .results h2 {   color: var(--navy); }  .result {   border: 1px solid var(--border);   border-radius: 11px;   padding: 19px;   margin: 13px 0;   background: white; }  .result h3 {   margin: 0 0 5px;   color: var(--navy);   font-size: 19px; }  .result-top {   display: flex;   justify-content: space-between;   gap: 12px;   flex-wrap: wrap; }  .meta {   font-size: 13px;   color: var(--muted); }  .result-label {   font-size: 11px;   font-weight: 700;   color: var(--teal-dark);   background: var(--mint);   padding: 5px 10px;   border-radius: 20px;   height: max-content; }  .pill {   display: inline-block;   background: #edf5f4;   color: #22635d;   padding: 4px 9px;   border-radius: 18px;   font-size: 12px;   margin: 7px 5px 0 0; }  .toolbar {   display: flex;   align-items: center;   justify-content: space-between;   gap: 12px;   flex-wrap: wrap;   margin: 15px 0; }  .toolbar select {   padding: 8px;   border: 1px solid var(--border);   border-radius: 7px;   background: white; }  /\* GENERAL SECTIONS \*/  section.content-section {   padding: 70px 0; }  .bg-light {   background: var(--background); }  .section-intro {   max-width: 720px;   text-align: center;   margin: 0 auto 35px; }  .section-intro h2 {   font-size: 32px;   color: var(--navy);   margin: 0 0 10px; }  .section-intro p {   color: var(--muted);   margin: 0; }  /\* CATEGORY CARDS \*/  .category-grid {   display: grid;   grid-template-columns: repeat(5, 1fr);   gap: 16px; }  .category-card {   border: 1px solid var(--border);   border-radius: 12px;   background: white;   padding: 22px 15px;   text-align: center;   transition: .2s; }  .category-card\:hover {   transform: translateY(-4px);   border-color: var(--teal);   box-shadow: 0 8px 20px #102b460c; }  .category-icon {   font-size: 30px;   margin-bottom: 9px; }  .category-card h3 {   color: var(--navy);   font-size: 14px;   margin: 0; }  /\* HOW IT WORKS \*/  .steps {   display: grid;   grid-template-columns: repeat(3, 1fr);   gap: 25px; }  .step {   background: white;   border: 1px solid var(--border);   border-radius: 13px;   padding: 27px;   text-align: center; }  .step-number {   display: inline-flex;   width: 45px;   height: 45px;   align-items: center;   justify-content: center;   background: var(--mint);   color: var(--teal-dark);   font-size: 20px;   font-weight: 800;   border-radius: 50%; }  .step h3 {   color: var(--navy);   margin-bottom: 8px; }  .step p {   font-size: 14px;   color: var(--muted);   margin: 0; }  /\* WHY DMEVIA \*/  .benefits {   display: grid;   grid-template-columns: repeat(3, 1fr);   gap: 22px; }  .benefit {   padding: 23px;   border-left: 3px solid var(--teal);   background: white;   border-radius: 5px; }  .benefit h3 {   color: var(--navy);   margin: 0 0 8px;   font-size: 17px; }  .benefit p {   font-size: 14px;   color: var(--muted);   margin: 0; }  /\* TRANSPARENCY \*/  .transparency {   background: var(--mint);   padding: 45px;   border-radius: 14px; }  .transparency h2 {   color: var(--navy);   margin-top: 0; }  .transparency p {   color: #405c5c;   font-size: 14px; }  /\* CONTACT \*/  .contact-box {   background: var(--navy);   color: white;   border-radius: 14px;   padding: 42px;   text-align: center; }  .contact-box h2 {   font-size: 29px;   margin: 0 0 8px; }  .contact-box p {   color: #dce9ef; }  .contact-button {   display: inline-block;   background: white;   color: var(--navy);   padding: 12px 22px;   border-radius: 8px;   font-weight: 700;   margin-top: 10px; }  /\* FOOTER \*/  footer {   background: #0b2035;   color: #d7e2e9;   padding: 48px 0 20px; }  .footer-grid {   display: grid;   grid-template-columns: 1.5fr 1fr 1fr 1fr;   gap: 30px; }  .footer-logo {   color: white;   font-size: 25px;   font-weight: 800; }  .footer-logo span {   color: #50c4b5; }  footer h3 {   color: white;   font-size: 15px;   margin-top: 0; }  footer p, footer li {   font-size: 13px;   color: #c3d0d9; }  footer ul {   list-style: none;   padding: 0; }  footer li {   margin: 8px 0; }  footer a {   color: #b9e7df; }  .footer-bottom {   border-top: 1px solid #ffffff25;   margin-top: 35px;   padding-top: 18px;   font-size: 12px;   color: #aebdc8; }  /\* MOBILE \*/  @media(max-width:850px) {   .navlinks {     gap: 13px;   }    .navlinks a {     font-size: 12px;   }    .search-grid {     grid-template-columns: 1fr 1fr;   }    .category-grid {     grid-template-columns: repeat(3, 1fr);   }    .footer-grid {     grid-template-columns: repeat(2, 1fr);   } }  @media(max-width:600px) {   .nav {     align-items: flex-start;     flex-direction: column;     padding: 13px 0;   }    .navlinks {     width: 100%;     overflow-x: auto;     padding-bottom: 7px;   }    .navlinks a {     white-space: nowrap;   }    .hero {     padding: 58px 0;   }    .hero h1 {     font-size: 37px;   }    .search-grid {     grid-template-columns: 1fr;   }    .search-card {     padding: 19px;   }    .category-grid {     grid-template-columns: repeat(2, 1fr);   }    .steps,   .benefits,   .footer-grid {     grid-template-columns: 1fr;   }    .transparency {     padding: 25px;   }    .contact-box {     padding: 30px 20px;   }    section.content-section {     padding: 50px 0;   } } \</style>
+* {
+  box-sizing: border-box;
+}
 
-\</head>
+html {
+  scroll-behavior: smooth;
+}
 
-\<body>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--white);
+}
 
-\<header>
-\<div class="wrap nav">
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
 
-\<a href="/" class="logo" aria-label="DMEvia home">
-\<img src="assets/dmevia-logo.png" alt="DMEvia — Find the Right DME Supplier Near You">
-\</a>
+a:hover {
+  text-decoration: underline;
+}
 
-\<nav class="navlinks" aria-label="Main navigation">
-\<a href="/">Home\</a>
-\<a href="#search">Find Suppliers\</a>
-\<a href="#about">About Us\</a>
-\<a href="#how">How It Works\</a>
-\<a href="#contact">Contact\</a>
-\<a href="#search" class="nav-button">Search Now\</a>
-\</nav>
+.wrap {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
 
-\</div>
-\</header>
+/* HEADER */
 
-\<main>
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-\<!-- HERO -->
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-\<section class="hero">
-\<div class="wrap hero-content">
+.logo {
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--navy);
+}
 
-\<span class="eyebrow">Independent DME Supplier Directory\</span>
+.logo span {
+  color: var(--teal);
+}
 
-\<h1>Find the Right DME Supplier Near You.\</h1>
+.logo small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: -7px;
+}
 
-\<p>
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.navlinks a {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navlinks .nav-button {
+  background: var(--teal);
+  color: white;
+  padding: 11px 18px;
+  border-radius: 8px;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(120deg, #102b46, #17616b);
+  color: white;
+  padding: 85px 0 75px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #ffffff1a;
+  color: #c8eeee;
+  padding: 7px 13px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin: 23px 0 18px;
+  max-width: 800px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #e1eeee;
+  max-width: 690px;
+  margin-bottom: 28px;
+}
+
+.hero-button {
+  display: inline-block;
+  background: white;
+  color: var(--navy);
+  padding: 14px 23px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.hero-button:hover {
+  background: #eaf5f3;
+  text-decoration: none;
+}
+
+/* SEARCH */
+
+.search-area {
+  background: var(--background);
+  padding: 65px 0;
+  scroll-margin-top: 90px;
+}
+
+.search-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 35px #102b460c;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr auto auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: var(--navy);
+}
+
+.field input,
+.field select {
+  width: 100%;
+  height: 49px;
+  border: 1px solid #cbd7df;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 15px;
+  background: white;
+  color: var(--text);
+}
+
+.btn {
+  min-height: 49px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--teal);
+  color: white;
+  padding: 0 21px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--teal-dark);
+}
+
+.btn.secondary {
+  background: #e9f0f3;
+  color: var(--navy);
+}
+
+.btn:disabled {
+  opacity: .5;
+}
+
+.status {
+  padding: 13px 15px;
+  border-radius: 8px;
+  background: var(--mint);
+  color: var(--navy);
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.status.warn {
+  background: #fff3e5;
+  color: #80541a;
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 17px;
+}
+
+/* RESULTS */
+
+.results {
+  padding-top: 40px;
+  padding-bottom: 45px;
+}
+
+.results h2 {
+  color: var(--navy);
+}
+
+.result {
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 19px;
+  margin: 13px 0;
+  background: white;
+}
+
+.result h3 {
+  margin: 0 0 5px;
+  color: var(--navy);
+  font-size: 19px;
+}
+
+.result-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.result-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  background: var(--mint);
+  padding: 5px 10px;
+  border-radius: 20px;
+  height: max-content;
+}
+
+.pill {
+  display: inline-block;
+  background: #edf5f4;
+  color: #22635d;
+  padding: 4px 9px;
+  border-radius: 18px;
+  font-size: 12px;
+  margin: 7px 5px 0 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.toolbar select {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: white;
+}
+
+/* GENERAL SECTIONS */
+
+section.content-section {
+  padding: 70px 0;
+}
+
+.bg-light {
+  background: var(--background);
+}
+
+.section-intro {
+  max-width: 720px;
+  text-align: center;
+  margin: 0 auto 35px;
+}
+
+.section-intro h2 {
+  font-size: 32px;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.section-intro p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* CATEGORY CARDS */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
+  padding: 22px 15px;
+  text-align: center;
+  transition: .2s;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+  box-shadow: 0 8px 20px #102b460c;
+}
+
+.category-icon {
+  font-size: 30px;
+  margin-bottom: 9px;
+}
+
+.category-card h3 {
+  color: var(--navy);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* HOW IT WORKS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 27px;
+  text-align: center;
+}
+
+.step-number {
+  display: inline-flex;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  background: var(--mint);
+  color: var(--teal-dark);
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 50%;
+}
+
+.step h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* WHY DMEVIA */
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.benefit {
+  padding: 23px;
+  border-left: 3px solid var(--teal);
+  background: white;
+  border-radius: 5px;
+}
+
+.benefit h3 {
+  color: var(--navy);
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.benefit p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* TRANSPARENCY */
+
+.transparency {
+  background: var(--mint);
+  padding: 45px;
+  border-radius: 14px;
+}
+
+.transparency h2 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+.transparency p {
+  color: #405c5c;
+  font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact-box {
+  background: var(--navy);
+  color: white;
+  border-radius: 14px;
+  padding: 42px;
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: 29px;
+  margin: 0 0 8px;
+}
+
+.contact-box p {
+  color: #dce9ef;
+}
+
+.contact-button {
+  display: inline-block;
+  background: white;
+  color: var(--navy);
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0b2035;
+  color: #d7e2e9;
+  padding: 48px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-logo {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.footer-logo span {
+  color: #50c4b5;
+}
+
+footer h3 {
+  color: white;
+  font-size: 15px;
+  margin-top: 0;
+}
+
+footer p,
+footer li {
+  font-size: 13px;
+  color: #c3d0d9;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #b9e7df;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff25;
+  margin-top: 35px;
+  padding-top: 18px;
+  font-size: 12px;
+  color: #aebdc8;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .navlinks {
+    gap: 13px;
+  }
+
+  .navlinks a {
+    font-size: 12px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width:600px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 13px 0;
+  }
+
+  .navlinks {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 7px;
+  }
+
+  .navlinks a {
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 58px 0;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-card {
+    padding: 19px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps,
+  .benefits,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transparency {
+    padding: 25px;
+  }
+
+  .contact-box {
+    padding: 30px 20px;
+  }
+
+  section.content-section {
+    padding: 50px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap nav">
+
+<a href="#" class="logo">
+DME<span>via</span>
+<small>FIND DME SUPPLIERS</small>
+</a>
+
+<nav class="navlinks" aria-label="Main navigation">
+<a href="#">Home</a>
+<a href="#search">Find Suppliers</a>
+<a href="#about">About Us</a>
+<a href="#how">How It Works</a>
+<a href="#contact">Contact</a>
+<a href="#search" class="nav-button">Search Now</a>
+</nav>
+
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="wrap hero-content">
+
+<span class="eyebrow">Independent DME Supplier Directory</span>
+
+<h1>Find the Right DME Supplier Near You.</h1>
+
+<p>
 Looking for medical equipment? DMEvia helps you discover
 Durable Medical Equipment supplier locations across the
 United States using publicly available CMS supplier information.
-\</p>
+</p>
 
-\<a href="#search" class="hero-button">Find Suppliers Near You →\</a>
+<a href="#search" class="hero-button">Find Suppliers Near You →</a>
 
-\</div>
-\</section>
+</div>
+</section>
 
-\<!-- SEARCH -->
+<!-- SEARCH -->
 
-\<section class="search-area" id="search">
-\<div class="wrap">
+<section class="search-area" id="search">
+<div class="wrap">
 
-\<div class="section-heading">
-\<h2>Find Medical Equipment Suppliers\</h2>
-\<p>Enter your ZIP code and select the equipment category you need.\</p>
-\</div>
+<div class="section-heading">
+<h2>Find Medical Equipment Suppliers</h2>
+<p>Enter your ZIP code and select the equipment category you need.</p>
+</div>
 
-\<div class="search-card">
+<div class="search-card">
 
-\<div class="status" id="status" role="status">
+<div class="status" id="status" role="status">
 Ready. Enter a ZIP code to search the supplier directory.
-\</div>
+</div>
 
-\<form class="search-grid" id="searchForm">
+<form class="search-grid" id="searchForm">
 
-\<div class="field">
-\<label for="zip">US ZIP Code\</label>
-\<input
+<div class="field">
+<label for="zip">US ZIP Code</label>
+<input
 id="zip"
 inputmode="numeric"
 maxlength="5"
 pattern="[0-9]{5}"
 placeholder="e.g. 10001"
 required>
-\</div>
+</div>
 
-\<div class="field">
-\<label for="category">Equipment Category\</label>
-\<select id="category">
-\<option value="">All equipment categories\</option>
-\<option value="cpap">CPAP devices\</option>
-\<option value="oxygen">Oxygen equipment and supplies\</option>
-\<option value="wheelchair">Wheelchairs\</option>
-\<option value="hospitalbed">Hospital beds\</option>
-\<option value="walker">Walkers\</option>
-\<option value="lift">Patient lifts\</option>
-\<option value="nebulizer">Nebulizers\</option>
-\<option value="glucose">Blood glucose monitors and supplies\</option>
-\<option value="diabetic">Diabetic shoes and inserts\</option>
-\<option value="enteral">Enteral equipment and supplies\</option>
-\</select>
-\</div>
+<div class="field">
+<label for="category">Equipment Category</label>
+<select id="category">
+<option value="">All equipment categories</option>
+<option value="cpap">CPAP devices</option>
+<option value="oxygen">Oxygen equipment and supplies</option>
+<option value="wheelchair">Wheelchairs</option>
+<option value="hospitalbed">Hospital beds</option>
+<option value="walker">Walkers</option>
+<option value="lift">Patient lifts</option>
+<option value="nebulizer">Nebulizers</option>
+<option value="glucose">Blood glucose monitors and supplies</option>
+<option value="diabetic">Diabetic shoes and inserts</option>
+<option value="enteral">Enteral equipment and supplies</option>
+</select>
+</div>
 
-\<button class="btn" id="searchBtn" type="submit">
+<button class="btn" id="searchBtn" type="submit">
 Find Suppliers
-\</button>
+</button>
 
-\<button class="btn secondary" id="clearBtn" type="button">
+<button class="btn secondary" id="clearBtn" type="button">
 Clear
-\</button>
+</button>
 
-\</form>
+</form>
 
-\<p class="hint">
+<p class="hint">
 Search results are based on supplier locations recorded in
 the public CMS dataset. Listings do not confirm current stock,
 delivery coverage or acceptance of a particular insurance plan.
 Please contact suppliers directly to verify details.
-\</p>
+</p>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\<!-- RESULTS -->
+<!-- RESULTS -->
 
-\<section class="results wrap" id="resultsSection" hidden>
+<section class="results wrap" id="resultsSection" hidden>
 
-\<h2>Supplier Results\</h2>
+<h2>Supplier Results</h2>
 
-\<div id="resultStatus" class="status">\</div>
+<div id="resultStatus" class="status"></div>
 
-\<div class="toolbar">
-\<span class="hint" id="resultSummary">\</span>
+<div class="toolbar">
+<span class="hint" id="resultSummary"></span>
 
-\<label class="hint">
+<label class="hint">
 Sort by:
-\<select id="sortBy">
-\<option value="name">Supplier name (A–Z)\</option>
-\<option value="zip">ZIP code\</option>
-\</select>
-\</label>
-\</div>
+<select id="sortBy">
+<option value="name">Supplier name (A–Z)</option>
+<option value="zip">ZIP code</option>
+</select>
+</label>
+</div>
 
-\<div id="results">\</div>
+<div id="results"></div>
 
-\</section>
+</section>
 
-\<!-- CATEGORIES -->
+<!-- CATEGORIES -->
 
-\<section class="content-section bg-light">
-\<div class="wrap">
+<section class="content-section bg-light">
+<div class="wrap">
 
-\<div class="section-intro">
-\<h2>Explore Equipment Categories\</h2>
-\<p>
+<div class="section-intro">
+<h2>Explore Equipment Categories</h2>
+<p>
 Search for suppliers associated with a range of
 Durable Medical Equipment categories.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="category-grid">
+<div class="category-grid">
 
-\<a class="category-card" href="#search" data-category="cpap">
-\<div class="category-icon">😴\</div>
-\<h3>CPAP Equipment\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="cpap">
+<div class="category-icon">😴</div>
+<h3>CPAP Equipment</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="oxygen">
-\<div class="category-icon">🫁\</div>
-\<h3>Oxygen Equipment\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="oxygen">
+<div class="category-icon">🫁</div>
+<h3>Oxygen Equipment</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="wheelchair">
-\<div class="category-icon">♿\</div>
-\<h3>Wheelchairs\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="wheelchair">
+<div class="category-icon">♿</div>
+<h3>Wheelchairs</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="hospitalbed">
-\<div class="category-icon">🛏️\</div>
-\<h3>Hospital Beds\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="hospitalbed">
+<div class="category-icon">🛏️</div>
+<h3>Hospital Beds</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="walker">
-\<div class="category-icon">🚶\</div>
-\<h3>Walkers\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="walker">
+<div class="category-icon">🚶</div>
+<h3>Walkers</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="lift">
-\<div class="category-icon">🧑‍🦽\</div>
-\<h3>Patient Lifts\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="lift">
+<div class="category-icon">🧑‍🦽</div>
+<h3>Patient Lifts</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="nebulizer">
-\<div class="category-icon">💨\</div>
-\<h3>Nebulizers\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="nebulizer">
+<div class="category-icon">💨</div>
+<h3>Nebulizers</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="glucose">
-\<div class="category-icon">🩸\</div>
-\<h3>Glucose Supplies\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="glucose">
+<div class="category-icon">🩸</div>
+<h3>Glucose Supplies</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="diabetic">
-\<div class="category-icon">👟\</div>
-\<h3>Diabetic Shoes\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="diabetic">
+<div class="category-icon">👟</div>
+<h3>Diabetic Shoes</h3>
+</a>
 
-\<a class="category-card" href="#search" data-category="enteral">
-\<div class="category-icon">🧴\</div>
-\<h3>Enteral Supplies\</h3>
-\</a>
+<a class="category-card" href="#search" data-category="enteral">
+<div class="category-icon">🧴</div>
+<h3>Enteral Supplies</h3>
+</a>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\<!-- HOW IT WORKS -->
+<!-- HOW IT WORKS -->
 
-\<section class="content-section" id="how">
-\<div class="wrap">
+<section class="content-section" id="how">
+<div class="wrap">
 
-\<div class="section-intro">
-\<h2>How DMEvia Works\</h2>
-\<p>
+<div class="section-intro">
+<h2>How DMEvia Works</h2>
+<p>
 Finding medical equipment supplier locations
 doesn't need to be complicated.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="steps">
+<div class="steps">
 
-\<div class="step">
-\<div class="step-number">1\</div>
-\<h3>Enter Your ZIP Code\</h3>
-\<p>
+<div class="step">
+<div class="step-number">1</div>
+<h3>Enter Your ZIP Code</h3>
+<p>
 Enter the five-digit US ZIP code where
 you want to find supplier locations.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="step">
-\<div class="step-number">2\</div>
-\<h3>Select Equipment\</h3>
-\<p>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Select Equipment</h3>
+<p>
 Choose the equipment category you are
 looking for, or search all categories.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="step">
-\<div class="step-number">3\</div>
-\<h3>Explore Suppliers\</h3>
-\<p>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Explore Suppliers</h3>
+<p>
 Review matching supplier locations and
 contact them directly to verify availability
 and other details.
-\</p>
-\</div>
+</p>
+</div>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\<!-- ABOUT -->
+<!-- ABOUT -->
 
-\<section class="content-section bg-light" id="about">
-\<div class="wrap">
+<section class="content-section bg-light" id="about">
+<div class="wrap">
 
-\<div class="section-intro">
-\<h2>Making DME Supplier Information Easier to Find\</h2>
-\<p>
+<div class="section-intro">
+<h2>Making DME Supplier Information Easier to Find</h2>
+<p>
 DMEvia is an independent online directory designed
 to help people discover Durable Medical Equipment
 supplier locations across the United States.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="benefits">
+<div class="benefits">
 
-\<div class="benefit">
-\<h3>Simple ZIP Code Search\</h3>
-\<p>
+<div class="benefit">
+<h3>Simple ZIP Code Search</h3>
+<p>
 Search supplier locations using a five-digit
 US ZIP code without downloading or uploading
 any files.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="benefit">
-\<h3>Equipment-Based Search\</h3>
-\<p>
+<div class="benefit">
+<h3>Equipment-Based Search</h3>
+<p>
 Explore suppliers by equipment categories
 such as CPAP devices, wheelchairs, oxygen
 equipment and more.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div class="benefit">
-\<h3>Public Data Transparency\</h3>
-\<p>
+<div class="benefit">
+<h3>Public Data Transparency</h3>
+<p>
 Our directory uses publicly available
 CMS supplier information and clearly
 explains what the listings can and cannot confirm.
-\</p>
-\</div>
+</p>
+</div>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\<!-- TRANSPARENCY -->
+<!-- TRANSPARENCY -->
 
-\<section class="content-section">
-\<div class="wrap">
+<section class="content-section">
+<div class="wrap">
 
-\<div class="transparency">
+<div class="transparency">
 
-\<h2>Our Data Source and Important Information\</h2>
+<h2>Our Data Source and Important Information</h2>
 
-\<p>
+<p>
 DMEvia uses publicly available information from the
 Centers for Medicare & Medicaid Services (CMS)
 Medical Equipment Suppliers dataset.
-\</p>
+</p>
 
-\<p>
+<p>
 Supplier listings reflect information contained in
 the public dataset and may not represent current
 business operations, equipment inventory, delivery
 coverage, insurance acceptance or eligibility.
-\</p>
+</p>
 
-\<p> Please contact each supplier directly to confirm their current services, equipment availability, location and applicable payment or insurance requirements. \</p>
+<p>
+Please contact each supplier directly to confirm
+their current services, equipment availability,
+location and applicable payment or insurance requirements.
+</p>
 
-\<p> DMEvia is an independent directory. It is not affiliated with, endorsed by or operated by CMS or Medicare. DMEvia does not provide medical advice, determine insurance coverage or guarantee supplier services. \</p>
+<p>
+DMEvia is an independent directory. It is not affiliated
+with, endorsed by or operated by CMS or Medicare.
+DMEvia does not provide medical advice, determine
+insurance coverage or guarantee supplier services.
+</p>
 
-\<p> \<strong>Official data source:\</strong> \<a href="[https://data.cms.gov/provider-data/dataset/ct36-nrcq](https://data.cms.gov/provider-data/dataset/ct36-nrcq)" target="\_blank" rel="noopener"> CMS Medical Equipment Suppliers \</a> \</p>
+<p>
+<strong>Official data source:</strong>
+<a href="https://data.cms.gov/provider-data/dataset/ct36-nrcq"
+target="_blank" rel="noopener">
+CMS Medical Equipment Suppliers
+</a>
+</p>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\<!-- CONTACT -->
+<!-- CONTACT -->
 
-\<section class="content-section bg-light" id="contact">
-\<div class="wrap">
+<section class="content-section bg-light" id="contact">
+<div class="wrap">
 
-\<div class="contact-box">
+<div class="contact-box">
 
-\<h2>We're Here to Help\</h2>
+<h2>We're Here to Help</h2>
 
-\<p>
+<p>
 Have a question, noticed an incorrect supplier listing,
 or interested in working with DMEvia?
 We would be happy to hear from you.
-\</p>
+</p>
 
-\<a class="contact-button" href="contact.html">
+<a class="contact-button" href="mailto:info@dmevia.com">
 Contact DMEvia
-\</a>
+</a>
 
-\<p style="font-size:13px;margin-top:18px">
-info\@dmevia.com
-\</p>
+<p style="font-size:13px;margin-top:18px">
+info@dmevia.com
+</p>
 
-\</div>
-\</div>
-\</section>
+</div>
+</div>
+</section>
 
-\</main>
+</main>
 
-\<!-- FOOTER -->
+<!-- FOOTER -->
 
-\<footer>
-\<div class="wrap">
+<footer>
+<div class="wrap">
 
-\<div class="footer-grid">
+<div class="footer-grid">
 
-\<div>
-\<div class="footer-logo">DME\<span>via\</span>\</div>
+<div>
+<div class="footer-logo">DME<span>via</span></div>
 
-\<p>
+<p>
 Find the Right DME Supplier Near You.
 An independent online directory helping
 people discover Durable Medical Equipment
 supplier locations across the United States.
-\</p>
-\</div>
+</p>
+</div>
 
-\<div>
-\<h3>Explore\</h3>
-\<ul>
-\<li>\<a href="#search">Find Suppliers\</a>\</li>
-\<li>\<a href="#about">About DMEvia\</a>\</li>
-\<li>\<a href="#how">How It Works\</a>\</li>
-\<li>\<a href="#contact">Contact Us\</a>\</li>
-\</ul>
-\</div>
+<div>
+<h3>Explore</h3>
+<ul>
+<li><a href="#search">Find Suppliers</a></li>
+<li><a href="#about">About DMEvia</a></li>
+<li><a href="#how">How It Works</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</div>
 
-\<div>
-\<h3>Contact\</h3>
-\<ul>
-\<li>\<a href="mailto\:info\@dmevia.com">info\@dmevia.com\</a>\</li>
-\<li>\<a href="[https://dmevia.com/](https://dmevia.com/)">www\.dmevia.com\</a>\</li>
-\</ul>
-\</div>
+<div>
+<h3>Contact</h3>
+<ul>
+<li><a href="mailto:info@dmevia.com">info@dmevia.com</a></li>
+<li><a href="https://dmevia.com/">www.dmevia.com</a></li>
+</ul>
+</div>
 
-\<div>
-\<h3>Legal\</h3>
-\<ul>
-\<li>\<a href="privacy-policy.html">Privacy Policy\</a>\</li>
-\<li>\<a href="disclaimer.html">Disclaimer\</a>\</li>
-\</ul>
-\</div>
+<div>
+<h3>Legal</h3>
+<ul>
+<li><a href="privacy-policy.html">Privacy Policy</a></li>
+<li><a href="disclaimer.html">Disclaimer</a></li>
+</ul>
+</div>
 
-\</div>
+</div>
 
-\<div class="footer-bottom">
+<div class="footer-bottom">
 
-\<p>
+<p>
 Data source: CMS Medical Equipment Suppliers dataset.
 DMEvia is independent and is not affiliated with or
 endorsed by CMS or Medicare.
-\</p>
+</p>
 
-\<p>
-© \<span id="year">\</span> DMEvia. All rights reserved.
-\</p>
+<p>
+© <span id="year"></span> DMEvia. All rights reserved.
+</p>
 
-\</div>
+</div>
 
-\</div>
-\</footer>
+</div>
+</footer>
 
-\<script>  /\* EXISTING SUPPLIER SEARCH ENGINE \*/  const fields = [ 'provider_id', 'acceptsassignement', 'businessname', 'practicename', 'practiceaddress1', 'practiceaddress2', 'practicecity', 'practicestate', 'practicezip9code', 'telephonenumber', 'supplieslist', 'latitude', 'longitude', 'participationbegindate', 'specialitieslist', 'providertypelist', 'is_contracted_for_cba' ];  let currentMatches = [];  const statusBox = document.getElementById('status'); const form = document.getElementById('searchForm'); const section = document.getElementById('resultsSection'); const resultStatus = document.getElementById('resultStatus'); const out = document.getElementById('results'); const summary = document.getElementById('resultSummary');  const cache = new Map();  function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c])); }  function unpack(a) { const o = {}; fields.forEach((k,i) => o[k] = a[i] || ''); return o; }  function categoryTokens(value) { return String(value || '') .split('|') .map(x => x.trim().toLowerCase()) .filter(Boolean); }  const terms = {  cpap: [ 'continuous positive airway pressure (cpap) devices', 'continuous positive airway pressure', 'cpap' ],  oxygen: [ 'oxygen equipment and/or supplies', 'oxygen equipment', 'oxygen' ],  wheelchair: ['wheelchairs'],  hospitalbed: ['hospital beds'],  walker: ['walkers'],  lift: ['patient lifts','lifts'],  nebulizer: [ 'nebulizer equipment and/or supplies', 'nebulizer' ],  glucose: [ 'blood glucose monitors and supplies', 'blood glucose', 'glucose monitors', 'diabetic testing' ],  diabetic: [ 'diabetic shoes and inserts', 'diabetic shoes', 'therapeutic shoes' ],  enteral: [ 'enteral equipment and supplies', 'enteral' ]  };  async function loadPrefix(prefix) {  if(cache.has(prefix)) return cache.get(prefix);  const promise = fetch('data/' + prefix + '.json')  .then(r => {  if(!r.ok) { throw new Error( 'Supplier data file ' + prefix + '.json could not be loaded (HTTP ' + r.status + ').' ); }  return r.json();  })  .then(a => a.map(unpack));  cache.set(prefix,promise);  try {  return await promise;  } catch(e) {  cache.delete(prefix); throw e;  }  }  function renderResults() {  const sort = document.getElementById('sortBy').value;  const list = [...currentMatches].sort((a,b) =>  sort === 'zip'  ? String(a.practicezip9code || '') .localeCompare(String(b.practicezip9code || '')) || String(a.practicename || '') .localeCompare(String(b.practicename || ''))  :  String(a.practicename || a.businessname || '') .localeCompare( String(b.practicename || b.businessname || '') )  );  summary.textContent = 'Showing ' + list.length.toLocaleString() + ' matching supplier location(s).';  out.innerHTML = list.slice(0,200).map(r => {  const name = r.practicename || r.businessname || 'Supplier name unavailable';  const zip = String(r.practicezip9code || '');  const addr = [ r.practiceaddress1, r.practiceaddress2, r.practicecity, r.practicestate, zip ].filter(Boolean).join(', ');  const phone = String(r.telephonenumber || '').replace(/\D/g,'');  const supplies = String(r.supplieslist || '') .split('|') .map(x => x.trim()) .filter(Boolean);  const assignment = String(r.acceptsassignement || '').toLowerCase() === 'true' ? 'Yes' : String(r.acceptsassignement || '').toLowerCase() === 'false' ? 'No' : 'Not stated';  return \`  \<article class="result">  \<div class="result-top">  \<div> \<h3>${esc(name)}\</h3> \<div class="meta">${esc(addr)}\</div> \</div>  \<span class="result-label">CMS-listed supplier\</span>  \</div>  ${phone ? \`\<div style="margin-top:7px"> \<a href="tel:${esc(phone)}">${esc(phone)}\</a> \</div>\` : ''}  \<div> ${supplies.map(x => \`\<span class="pill">${esc(x)}\</span>\` ).join('')} \</div>  \<div class="meta" style="margin-top:10px"> CMS supplier ID: ${esc(r.provider_id || '—')} · Medicare assignment accepted: ${assignment} \</div>  \</article>  \`;  }).join('') +  (list.length > 200 ? '\<p class="hint">Showing the first 200 results. Narrow your search by ZIP code or category.\</p>' : '');  }  form.addEventListener('submit', async e => {  e.preventDefault();  section.hidden = false; out.innerHTML = ''; summary.textContent = '';  const zip = document.getElementById('zip').value.trim();  const cat = document.getElementById('category').value;  if(!/^\d{5}$/.test(zip)) {  resultStatus.className = 'status warn';  resultStatus.textContent = 'Enter a valid five-digit US ZIP code.';  return;  }  resultStatus.className = 'status';  resultStatus.textContent = 'Loading supplier data for ZIP ' + zip + '…';  statusBox.textContent = 'Loading the relevant CMS data section…';  try {  const records = await loadPrefix(zip.slice(0,2));  let matches = records.filter(r => String(r.practicezip9code || '') .replace(/\D/g,'') .startsWith(zip) );  if(cat) {  const keys = terms[cat] || [];  matches = matches.filter(r => categoryTokens(r.supplieslist).some(token => keys.some(k => token.includes(k)) ) );  }  currentMatches = matches;  const categoryLabel = document.getElementById('category') .selectedOptions[0].text;  resultStatus.textContent = 'Found ' + matches.length.toLocaleString() + ' matching CMS supplier location(s) for ZIP ' + zip + (cat ? ' in ' + categoryLabel + '.' : '.');  statusBox.textContent = 'Supplier data loaded successfully. Search another ZIP code whenever you like.';  if(!matches.length) {  summary.textContent = '';  out.innerHTML = '\<p>No matching CMS supplier records found. Try another ZIP code or equipment category.\</p>';  return;  }  renderResults();  } catch(err) {  resultStatus.className = 'status warn';  resultStatus.textContent = 'Could not load supplier data: ' + err.message;  statusBox.className = 'status warn';  statusBox.textContent = 'Data loading failed. Please refresh the page and try again.';  }  });  document.getElementById('sortBy') .addEventListener('change', () => {  if(currentMatches.length) renderResults();  });  document.getElementById('clearBtn') .addEventListener('click', () => {  document.getElementById('zip').value = '';  document.getElementById('category').value = '';  section.hidden = true;  out.innerHTML = '';  summary.textContent = '';  currentMatches = [];  statusBox.className = 'status';  statusBox.textContent = 'Ready. Enter a ZIP code to search the supplier directory.';  });  /\* CATEGORY CARD SHORTCUTS \*/  document.querySelectorAll('[data-category]') .forEach(card => {  card.addEventListener('click', () => {  document.getElementById('category').value = card.dataset.category;  });  });  /\* FOOTER YEAR \*/  document.getElementById('year').textContent = new Date().getFullYear();  \</script>
+<script>
 
-\</body> \</html>
+/* EXISTING SUPPLIER SEARCH ENGINE */
+
+const fields = [
+'provider_id',
+'acceptsassignement',
+'businessname',
+'practicename',
+'practiceaddress1',
+'practiceaddress2',
+'practicecity',
+'practicestate',
+'practicezip9code',
+'telephonenumber',
+'supplieslist',
+'latitude',
+'longitude',
+'participationbegindate',
+'specialitieslist',
+'providertypelist',
+'is_contracted_for_cba'
+];
+
+let currentMatches = [];
+
+const statusBox = document.getElementById('status');
+const form = document.getElementById('searchForm');
+const section = document.getElementById('resultsSection');
+const resultStatus = document.getElementById('resultStatus');
+const out = document.getElementById('results');
+const summary = document.getElementById('resultSummary');
+
+const cache = new Map();
+
+function esc(s) {
+return String(s ?? '').replace(/[&<>"']/g, c => ({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[c]));
+}
+
+function unpack(a) {
+const o = {};
+fields.forEach((k,i) => o[k] = a[i] || '');
+return o;
+}
+
+function categoryTokens(value) {
+return String(value || '')
+.split('|')
+.map(x => x.trim().toLowerCase())
+.filter(Boolean);
+}
+
+const terms = {
+
+cpap: [
+'continuous positive airway pressure (cpap) devices',
+'continuous positive airway pressure',
+'cpap'
+],
+
+oxygen: [
+'oxygen equipment and/or supplies',
+'oxygen equipment',
+'oxygen'
+],
+
+wheelchair: ['wheelchairs'],
+
+hospitalbed: ['hospital beds'],
+
+walker: ['walkers'],
+
+lift: ['patient lifts','lifts'],
+
+nebulizer: [
+'nebulizer equipment and/or supplies',
+'nebulizer'
+],
+
+glucose: [
+'blood glucose monitors and supplies',
+'blood glucose',
+'glucose monitors',
+'diabetic testing'
+],
+
+diabetic: [
+'diabetic shoes and inserts',
+'diabetic shoes',
+'therapeutic shoes'
+],
+
+enteral: [
+'enteral equipment and supplies',
+'enteral'
+]
+
+};
+
+async function loadPrefix(prefix) {
+
+if(cache.has(prefix)) return cache.get(prefix);
+
+const promise = fetch('data/' + prefix + '.json')
+
+.then(r => {
+
+if(!r.ok) {
+throw new Error(
+'Supplier data file ' + prefix +
+'.json could not be loaded (HTTP ' +
+r.status + ').'
+);
+}
+
+return r.json();
+
+})
+
+.then(a => a.map(unpack));
+
+cache.set(prefix,promise);
+
+try {
+
+return await promise;
+
+} catch(e) {
+
+cache.delete(prefix);
+throw e;
+
+}
+
+}
+
+function renderResults() {
+
+const sort = document.getElementById('sortBy').value;
+
+const list = [...currentMatches].sort((a,b) =>
+
+sort === 'zip'
+
+? String(a.practicezip9code || '')
+.localeCompare(String(b.practicezip9code || ''))
+||
+String(a.practicename || '')
+.localeCompare(String(b.practicename || ''))
+
+:
+
+String(a.practicename || a.businessname || '')
+.localeCompare(
+String(b.practicename || b.businessname || '')
+)
+
+);
+
+summary.textContent =
+'Showing ' + list.length.toLocaleString() +
+' matching supplier location(s).';
+
+out.innerHTML = list.slice(0,200).map(r => {
+
+const name =
+r.practicename ||
+r.businessname ||
+'Supplier name unavailable';
+
+const zip = String(r.practicezip9code || '');
+
+const addr = [
+r.practiceaddress1,
+r.practiceaddress2,
+r.practicecity,
+r.practicestate,
+zip
+].filter(Boolean).join(', ');
+
+const phone =
+String(r.telephonenumber || '').replace(/\D/g,'');
+
+const supplies =
+String(r.supplieslist || '')
+.split('|')
+.map(x => x.trim())
+.filter(Boolean);
+
+const assignment =
+String(r.acceptsassignement || '').toLowerCase() === 'true'
+? 'Yes'
+:
+String(r.acceptsassignement || '').toLowerCase() === 'false'
+? 'No'
+: 'Not stated';
+
+return `
+
+<article class="result">
+
+<div class="result-top">
+
+<div>
+<h3>${esc(name)}</h3>
+<div class="meta">${esc(addr)}</div>
+</div>
+
+<span class="result-label">CMS-listed supplier</span>
+
+</div>
+
+${phone
+? `<div style="margin-top:7px">
+<a href="tel:${esc(phone)}">${esc(phone)}</a>
+</div>`
+: ''}
+
+<div>
+${supplies.map(x =>
+`<span class="pill">${esc(x)}</span>`
+).join('')}
+</div>
+
+<div class="meta" style="margin-top:10px">
+CMS supplier ID: ${esc(r.provider_id || '—')}
+· Medicare assignment accepted: ${assignment}
+</div>
+
+</article>
+
+`;
+
+}).join('') +
+
+(list.length > 200
+? '<p class="hint">Showing the first 200 results. Narrow your search by ZIP code or category.</p>'
+: '');
+
+}
+
+form.addEventListener('submit', async e => {
+
+e.preventDefault();
+
+section.hidden = false;
+out.innerHTML = '';
+summary.textContent = '';
+
+const zip =
+document.getElementById('zip').value.trim();
+
+const cat =
+document.getElementById('category').value;
+
+if(!/^\d{5}$/.test(zip)) {
+
+resultStatus.className = 'status warn';
+
+resultStatus.textContent =
+'Enter a valid five-digit US ZIP code.';
+
+return;
+
+}
+
+resultStatus.className = 'status';
+
+resultStatus.textContent =
+'Loading supplier data for ZIP ' + zip + '…';
+
+statusBox.textContent =
+'Loading the relevant CMS data section…';
+
+try {
+
+const records = await loadPrefix(zip.slice(0,2));
+
+let matches = records.filter(r =>
+String(r.practicezip9code || '')
+.replace(/\D/g,'')
+.startsWith(zip)
+);
+
+if(cat) {
+
+const keys = terms[cat] || [];
+
+matches = matches.filter(r =>
+categoryTokens(r.supplieslist).some(token =>
+keys.some(k => token.includes(k))
+)
+);
+
+}
+
+currentMatches = matches;
+
+const categoryLabel =
+document.getElementById('category')
+.selectedOptions[0].text;
+
+resultStatus.textContent =
+'Found ' + matches.length.toLocaleString() +
+' matching CMS supplier location(s) for ZIP ' +
+zip +
+(cat ? ' in ' + categoryLabel + '.' : '.');
+
+statusBox.textContent =
+'Supplier data loaded successfully. Search another ZIP code whenever you like.';
+
+if(!matches.length) {
+
+summary.textContent = '';
+
+out.innerHTML =
+'<p>No matching CMS supplier records found. Try another ZIP code or equipment category.</p>';
+
+return;
+
+}
+
+renderResults();
+
+} catch(err) {
+
+resultStatus.className = 'status warn';
+
+resultStatus.textContent =
+'Could not load supplier data: ' + err.message;
+
+statusBox.className = 'status warn';
+
+statusBox.textContent =
+'Data loading failed. Please refresh the page and try again.';
+
+}
+
+});
+
+document.getElementById('sortBy')
+.addEventListener('change', () => {
+
+if(currentMatches.length) renderResults();
+
+});
+
+document.getElementById('clearBtn')
+.addEventListener('click', () => {
+
+document.getElementById('zip').value = '';
+
+document.getElementById('category').value = '';
+
+section.hidden = true;
+
+out.innerHTML = '';
+
+summary.textContent = '';
+
+currentMatches = [];
+
+statusBox.className = 'status';
+
+statusBox.textContent =
+'Ready. Enter a ZIP code to search the supplier directory.';
+
+});
+
+/* CATEGORY CARD SHORTCUTS */
+
+document.querySelectorAll('[data-category]')
+.forEach(card => {
+
+card.addEventListener('click', () => {
+
+document.getElementById('category').value =
+card.dataset.category;
+
+});
+
+});
+
+/* FOOTER YEAR */
+
+document.getElementById('year').textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
