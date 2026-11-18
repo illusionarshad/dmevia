@@ -1,476 +1,325 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\<!DOCTYPE html>
 
-<title>Disclaimer | DMEvia</title>
+\<html lang="en">
+\<head>
+&#x20; \<meta charset="UTF-8">
+&#x20; \<meta name="viewport" content="width=device-width, initial-scale=1.0">
+&#x20; \<meta name="description" content="DMEvia disclaimer covering supplier listings, information accuracy, medical advice, and independent directory status.">
+&#x20; \<title>Disclaimer | DMEvia\</title>
+&#x20; \<link rel="icon" href="assets/dmevia-icon.png">
+&#x20; \<style>
+&#x20;   \:root {
+&#x20;     \--navy: #123047;
+&#x20;     \--teal: #168c88;
+&#x20;     \--text: #344653;
+&#x20;     \--muted: #687984;
+&#x20;     \--background: #f5f8fa;
+&#x20;     \--white: #ffffff;
+&#x20;     \--border: #e2e9ed;
+&#x20;   }
 
-<meta name="description" content="Read the DMEvia disclaimer regarding supplier information, CMS public data, equipment availability, insurance coverage and medical advice.">
-
-<style>
-:root {
-    --navy: #102b46;
-    --teal: #087f8c;
-    --light: #f4f8fa;
-    --text: #263746;
-    --muted: #667784;
-    --border: #e1e9ed;
-    --white: #ffffff;
-}
-
+```
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-    background: var(--light);
-    line-height: 1.7;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.7;
 }
 
 header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 6%;
 }
 
-.nav {
-    max-width: 1120px;
-    margin: auto;
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 27px;
-    font-weight: 800;
-    color: var(--navy);
-    text-decoration: none;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: var(--teal);
+  display: block;
+  width: 175px;
+  max-width: 100%;
+  height: auto;
 }
 
 nav {
-    display: flex;
-    gap: 22px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--navy);
-    font-size: 14px;
-    font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 nav a:hover {
-    color: var(--teal);
+  color: var(--teal);
 }
 
-.hero {
-    background: linear-gradient(120deg, #102b46, #087f8c);
-    color: white;
-    padding: 55px 24px;
-}
-
-.hero-inner {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.hero h1 {
-    margin: 0 0 10px;
-    font-size: 38px;
-}
-
-.hero p {
-    margin: 0;
-    color: #e2f2f4;
-    font-size: 16px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 40px auto 70px;
-    padding: 0 24px;
+main {
+  max-width: 900px;
+  margin: 45px auto;
+  padding: 0 20px;
 }
 
 .content {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 35px;
-    box-shadow: 0 5px 20px rgba(16,43,70,0.04);
+  background: var(--white);
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(18, 48, 71, 0.04);
 }
 
-.updated {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 28px;
+h1, h2 {
+  color: var(--navy);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 34px;
+  line-height: 1.2;
 }
 
 h2 {
-    color: var(--navy);
-    font-size: 21px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 8px;
 }
 
-p {
-    margin-top: 8px;
+p, li {
+  font-size: 15px;
 }
 
-ul {
-    padding-left: 24px;
-}
-
-li {
-    margin-bottom: 8px;
+.effective-date {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 28px;
 }
 
 a {
-    color: var(--teal);
-}
-
-.notice {
-    background: #eef7f8;
-    border-left: 4px solid var(--teal);
-    padding: 16px 18px;
-    border-radius: 5px;
-    margin: 20px 0;
+  color: var(--teal);
 }
 
 footer {
-    background: var(--navy);
-    color: #dce6ed;
-    padding: 35px 24px;
-}
-
-.footer-inner {
-    max-width: 1120px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 25px;
+  background: var(--navy);
+  color: #e7eff3;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 13px;
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
-    margin-right: 16px;
-    font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.footer-copy {
-    font-size: 13px;
-    color: #bdcbd5;
-    margin-top: 15px;
+@media (max-width: 600px) {
+  .header-inner {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .content {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
 }
+```
 
-@media(max-width:650px) {
-    .nav {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+&#x20; \</style>
+\</head>
 
-    nav {
-        gap: 13px;
-    }
+\<body>
 
-    .hero h1 {
-        font-size: 30px;
-    }
+\<header>
+&#x20; \<div class="header-inner">
+&#x20;   \<a href="index.html">
+&#x20;     \<img src="assets/dmevia-logo.png" alt="DMEvia - Find the Right DME Supplier Near You" class="logo">
+&#x20;   \</a>
 
-    .content {
-        padding: 23px 19px;
-    }
+```
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#search">Find Suppliers</a>
+  <a href="index.html#about">About Us</a>
+  <a href="contact.html">Contact</a>
+</nav>
+```
 
-    .container {
-        margin-top: 25px;
-    }
-}
-</style>
-</head>
+&#x20; \</div>
+\</header>
 
-<body>
+\<main>
+&#x20; \<article class="content">
 
-<header>
-    <div class="nav">
-        <a class="logo" href="index.html">DME<span>via</span></a>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="index.html#search">Find Suppliers</a>
-            <a href="about.html">About Us</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="hero-inner">
-        <h1>Disclaimer</h1>
-        <p>Important information about using the DMEvia supplier directory.</p>
-    </div>
-</section>
-
-<main class="container">
-<div class="content">
-
-<p class="updated">Last updated: November 18, 2026</p>
+```
+<h1>Disclaimer</h1>
+<p class="effective-date">Effective date: November 19, 2026</p>
 
 <p>
-The information provided on DMEvia is intended for general informational
-and directory purposes. By accessing or using this website, you
-acknowledge the limitations and conditions described below.
+  Welcome to DMEvia. This Disclaimer explains the limitations of the
+  information and services provided through our website. By accessing
+  or using DMEvia, you acknowledge and agree to the terms described below.
 </p>
 
 <h2>1. Independent Directory</h2>
-
 <p>
-DMEvia is an independent online directory designed to help visitors
-discover Durable Medical Equipment (DME) supplier locations.
+  DMEvia is an independent online directory designed to help individuals
+  locate Durable Medical Equipment (DME) suppliers in the United States.
+  DMEvia is not affiliated with, endorsed by, sponsored by, or officially
+  connected to the Centers for Medicare &amp; Medicaid Services (CMS),
+  Medicare, Medicaid, or any government agency.
 </p>
 
 <p>
-DMEvia is not affiliated with, operated by, sponsored by or endorsed
-by the U.S. Centers for Medicare &amp; Medicaid Services (CMS), Medicare,
-any government agency or any individual DME supplier listed on this
-website.
+  References to CMS or publicly available government information are
+  provided only to explain the sources used for certain directory listings.
+</p>
+
+<h2>2. Supplier Information and Accuracy</h2>
+<p>
+  Some supplier information displayed on DMEvia is based on publicly
+  available information, including CMS public datasets. We may also
+  receive information directly from suppliers.
 </p>
 
 <p>
-References to CMS, Medicare or publicly available government data are
-for identification and informational purposes only.
-</p>
-
-<h2>2. Public Data and Accuracy</h2>
-
-<p>
-Supplier information displayed on DMEvia is derived from publicly
-available information published by the Centers for Medicare &amp;
-Medicaid Services (CMS), including its Medical Equipment Suppliers
-dataset.
+  Although we aim to present useful and accurate information, we do not
+  guarantee that listings, addresses, telephone numbers, websites,
+  services, or other supplier details are complete, current, or error-free.
 </p>
 
 <p>
-Although we make reasonable efforts to present this information in
-a useful and understandable format, we do not independently verify
-every supplier record or guarantee that all information is complete,
-accurate or up to date.
+  Supplier businesses may change their locations, contact details,
+  services, ownership, or operating status without notifying DMEvia.
 </p>
 
-<p>Information may change after publication, including:</p>
-
+<h2>3. No Guarantee of Equipment or Services</h2>
+<p>
+  A supplier appearing in the DMEvia directory does not guarantee that
+  the supplier:
+</p>
 <ul>
-    <li>Supplier business names and contact details.</li>
-    <li>Business addresses and operating status.</li>
-    <li>Equipment categories associated with a supplier.</li>
-    <li>Supplier participation and enrollment information.</li>
+  <li>Currently has a particular medical equipment item in stock.</li>
+  <li>Provides services in your location or ZIP code.</li>
+  <li>Accepts Medicare, Medicaid, or your private insurance plan.</li>
+  <li>Is an in-network provider under your insurance policy.</li>
+  <li>Offers a particular price, delivery option, or payment arrangement.</li>
+  <li>Can meet your specific medical or equipment requirements.</li>
 </ul>
 
-<div class="notice">
-    <strong>Important:</strong> A supplier appearing in DMEvia's search
-    results does not guarantee that the supplier is currently operating,
-    has a particular product in stock or can serve your location.
-</div>
-
-<h2>3. Equipment Availability and Delivery</h2>
-
 <p>
-Equipment categories displayed in our directory are based on information
-in the underlying public dataset. They should not be interpreted as
-confirmation of current product inventory.
+  You should contact the supplier directly to confirm availability,
+  eligibility, pricing, insurance acceptance, delivery coverage, and
+  all other relevant details before making a decision.
+</p>
+
+<h2>4. No Medical Advice</h2>
+<p>
+  DMEvia provides directory and informational services only. Nothing
+  on this website constitutes medical advice, diagnosis, treatment,
+  or a recommendation to use a particular medical device or service.
 </p>
 
 <p>
-A supplier's listed physical address also does not establish its delivery
-area, service coverage or willingness to serve a particular ZIP code.
+  Always consult your physician or another qualified healthcare
+  professional regarding your medical needs, equipment requirements,
+  and treatment decisions.
+</p>
+
+<h2>5. No Endorsement or Recommendation</h2>
+<p>
+  The inclusion of a supplier in our directory does not constitute an
+  endorsement, certification, recommendation, or guarantee by DMEvia.
+  Directory listings should not be interpreted as a ranking or assessment
+  of a supplier's quality, reliability, or suitability.
 </p>
 
 <p>
-Visitors should contact suppliers directly to confirm:
+  Users are responsible for independently evaluating suppliers and
+  deciding which supplier best meets their requirements.
 </p>
 
-<ul>
-    <li>Whether the required equipment is currently available.</li>
-    <li>Whether the supplier serves their location.</li>
-    <li>Delivery, installation and maintenance arrangements.</li>
-    <li>Product specifications and suitability.</li>
-    <li>Current pricing and any additional charges.</li>
-</ul>
-
-<h2>4. Insurance and Medicare Coverage</h2>
-
+<h2>6. External Websites and Third Parties</h2>
 <p>
-DMEvia does not determine whether a particular product or service is
-covered by Medicare, Medicaid or private health insurance.
+  DMEvia may provide links to external supplier websites or other
+  third-party resources. These websites are operated independently
+  of DMEvia.
 </p>
 
 <p>
-A supplier listing does not guarantee that the supplier accepts a
-visitor's insurance plan or that a particular item will be covered.
+  We do not control or guarantee the accuracy, availability, privacy
+  practices, products, or services of external websites. Visiting
+  external websites is at your own discretion.
+</p>
+
+<h2>7. Limitation of Responsibility</h2>
+<p>
+  To the extent permitted by applicable law, DMEvia is not responsible
+  for losses, damages, disputes, costs, or inconvenience arising from
+  reliance on directory information, interactions with listed suppliers,
+  equipment purchases, insurance decisions, or services obtained from
+  third parties.
 </p>
 
 <p>
-Insurance coverage, medical necessity, prior authorization, deductibles,
-copayments and reimbursement depend on the applicable plan rules,
-individual circumstances and relevant payer requirements.
+  Any transaction, agreement, or service arrangement between a user
+  and a DME supplier is solely between those parties.
+</p>
+
+<h2>8. Changes to This Disclaimer</h2>
+<p>
+  We may update this Disclaimer from time to time to reflect changes
+  to our website, services, or business practices. The updated version
+  will be published on this page with a revised effective date.
+</p>
+
+<h2>9. Contact Us</h2>
+<p>
+  If you have questions about this Disclaimer or information displayed
+  on DMEvia, please contact us:
 </p>
 
 <p>
-Visitors should confirm coverage and potential costs directly with
-their insurance provider and the supplier before purchasing or
-arranging equipment.
+  <strong>Email:</strong>
+  <a href="mailto:info@dmevia.com">info@dmevia.com</a><br>
+  <strong>Website:</strong>
+  <a href="https://dmevia.com/">https://dmevia.com/</a>
 </p>
+```
 
-<h2>5. No Medical Advice</h2>
+&#x20; \</article> \</main>
 
-<p>
-DMEvia does not provide medical advice, diagnosis, treatment
-recommendations or clinical assessments.
-</p>
+\<footer>   \<p>&copy; \<span id="year">\</span> DMEvia. All rights reserved.\</p>   \<p>     \<a href="index.html">Home\</a> |     \<a href="privacy-policy.html">Privacy Policy\</a> |     \<a href="disclaimer.html">Disclaimer\</a> |     \<a href="contact.html">Contact\</a>   \</p>   \<p>Find the Right DME Supplier Near You.\</p> \</footer>
 
-<p>
-Information on this website should not be used as a substitute for
-professional medical advice from a qualified healthcare professional.
-</p>
+\<script>   document.getElementById("year").textContent = new Date().getFullYear(); \</script>
 
-<p>
-The choice of medical equipment should be discussed with an appropriate
-healthcare professional who understands the individual's medical needs.
-</p>
-
-<p>
-Never delay or disregard professional medical advice because of
-information found on this website.
-</p>
-
-<h2>6. No Endorsement or Recommendation</h2>
-
-<p>
-The appearance of a supplier in DMEvia's search results does not
-constitute an endorsement, recommendation, certification or guarantee
-of the supplier's services, products or business practices.
-</p>
-
-<p>
-Search results are intended to help visitors discover supplier
-locations. Visitors are responsible for independently evaluating
-suppliers and deciding whom to contact or engage.
-</p>
-
-<h2>7. External Websites and Third-Party Services</h2>
-
-<p>
-DMEvia may provide links to external websites, government resources
-or third-party services for visitor convenience.
-</p>
-
-<p>
-We do not control or guarantee the accuracy, availability, security
-or content of external websites. Visiting or using an external service
-is at your own discretion and subject to that provider's terms and
-privacy practices.
-</p>
-
-<h2>8. Website Availability</h2>
-
-<p>
-We aim to keep DMEvia accessible and useful. However, we do not
-guarantee uninterrupted website availability or error-free operation.
-</p>
-
-<p>
-Features, search results, data sources and website content may be
-modified, updated, suspended or discontinued without prior notice.
-</p>
-
-<h2>9. Limitation of Responsibility</h2>
-
-<p>
-To the extent permitted by applicable law, DMEvia and its operators
-are not responsible for losses, damages or decisions arising from
-reliance on supplier listings, public data, third-party information
-or the availability, suitability, pricing, delivery or insurance
-coverage of equipment.
-</p>
-
-<p>
-Visitors are responsible for verifying relevant information directly
-with suppliers, insurers and qualified healthcare professionals
-before making decisions.
-</p>
-
-<p>
-Nothing in this disclaimer excludes or limits any liability that
-cannot legally be excluded or limited under applicable law.
-</p>
-
-<h2>10. Updates to This Disclaimer</h2>
-
-<p>
-We may update this disclaimer as DMEvia develops or as our services
-and data sources change. Updated information will be published on
-this page with a revised date.
-</p>
-
-<h2>11. Contact Us</h2>
-
-<p>
-If you have questions about this disclaimer or information displayed
-on DMEvia, please contact us:
-</p>
-
-<p>
-<strong>Email:</strong>
-<a href="mailto:info@dmevia.com">info@dmevia.com</a>
-</p>
-
-<p>
-<strong>Website:</strong>
-<a href="https://dmevia.com/">https://dmevia.com/</a>
-</p>
-
-</div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="disclaimer.html">Disclaimer</a>
-
-            <div class="footer-copy">
-                © 2026 DMEvia. All rights reserved.
-            </div>
-        </div>
-
-        <div class="footer-copy">
-            An independent DME supplier directory using publicly available data.
-            Not affiliated with or endorsed by CMS or Medicare.
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+\</body>
+\</html>
